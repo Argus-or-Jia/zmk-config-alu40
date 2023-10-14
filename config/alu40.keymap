@@ -21,10 +21,10 @@
             // | PLAY  | LCTL | LALT | LGUI | LOWR |     SPACE    |  RAIS | LARW | UARW | DARW  |  RARW |
 
             bindings = <
-&gresc     &kp Q         &kp W     &kp E             &kp R  &kp T      &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp TAB    &kp A         &kp S     &kp D             &kp F  &kp G      &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z         &kp X     &kp C             &kp V  &kp B      &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &mt RSHFT RET
-&kp LCTRL  &kp LEFT_GUI  &kp LALT  &kp C_PLAY_PAUSE  &mo 1  &kp SPACE  &kp SPACE  &mo 2  &kp LEFT   &kp UP   &kp DOWN  &kp RIGHT
+&gresc     &kp Q         &kp W     &kp E  &kp R  &kp T      &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&kp TAB    &kp A         &kp S     &kp D  &kp F  &kp G      &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z         &kp X     &kp C  &kp V  &kp B      &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &mt RSHFT RET
+&kp LCTRL  &kp LEFT_GUI  &kp LALT  &mo 4  &mo 1  &kp SPACE  &kp SPACE  &mo 2  &kp LEFT   &kp UP   &kp DOWN  &kp RIGHT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -55,7 +55,7 @@
         control {
             bindings = <
 &sys_reset       &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &trans  &trans  &trans      &trans  &trans  &bt BT_CLR
-&rgb_ug RGB_ON   &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF  &trans  &tog 4  &tog 5      &trans  &trans  &trans
+&rgb_ug RGB_ON   &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF  &trans  &tog 5  &tog 6      &trans  &trans  &trans
 &rgb_ug RGB_OFF  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_EFR  &trans  &trans  &trans      &trans  &trans  &trans
 &bootloader      &trans           &trans           &trans           &trans           &trans           &trans  &trans  &bt BT_PRV  &trans  &trans  &bt BT_NXT
             >;
@@ -63,12 +63,21 @@
             sensor-bindings = <&inc_dec_kp LG(MINUS) LG(PLUS)>;
         };
 
+        numpad {
+            bindings = <
+&trans  &trans    &kp UP    &trans     &trans  &trans  &trans  &kp MINUS  &kp N7  &kp N8      &kp N9   &kp BSPC
+&trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans  &kp PLUS   &kp N4  &kp N5      &kp N6   &kp K_PASTE
+&trans  &trans    &trans    &trans     &trans  &trans  &trans  &kp FSLH   &kp N1  &kp N2      &kp N3   &kp RET
+&trans  &trans    &trans    &trans     &trans  &trans  &trans  &kp STAR   &kp N0  &kp K_COPY  &kp DOT  &kp ENTER
+            >;
+        };
+
         game {
             bindings = <
 &gresc     &kp Q   &kp W     &kp E   &kp R   &kp T      &kp Y      &kp U            &kp I              &kp O     &kp P     &kp BSPC
 &kp TAB    &kp A   &kp S     &kp D   &kp F   &kp G      &kp H      &kp J            &kp K              &kp L     &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z   &kp X     &kp C   &kp V   &kp B      &kp N      &kp M            &kp COMMA          &kp DOT   &kp UP    &kp RET
-&kp LCTRL  &tog 4  &kp LALT  &tog 4  &tog 4  &kp SPACE  &kp SPACE  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp LEFT  &kp DOWN  &kp RIGHT
+&kp LCTRL  &tog 5  &kp LALT  &tog 5  &tog 5  &kp SPACE  &kp SPACE  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp LEFT  &kp DOWN  &kp RIGHT
             >;
         };
 
@@ -77,7 +86,7 @@
 &kp ESC    &kp N1  &kp N2    &kp N3   &kp N4  &kp N5     &kp N6     &kp N7           &kp N8             &kp N9    &kp N0    &kp BSPC
 &kp TAB    &kp Q   &kp W     &kp E    &kp R   &kp T      &kp Y      &kp U            &kp I              &kp O     &kp P     &trans
 &kp LSHFT  &kp A   &kp S     &kp D    &kp F   &kp G      &kp H      &kp J            &kp K              &kp L     &kp UP    &kp ENTER
-&kp LCTRL  &tog 5  &kp LALT  &kp F14  &kp B   &kp SPACE  &kp SPACE  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp LEFT  &kp DOWN  &kp RIGHT
+&kp LCTRL  &tog 6  &kp LALT  &kp F14  &kp B   &kp SPACE  &kp SPACE  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp LEFT  &kp DOWN  &kp RIGHT
             >;
         };
     };
